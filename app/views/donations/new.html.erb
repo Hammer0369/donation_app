@@ -1,8 +1,9 @@
-<%= form_with url: donations_path, local: true do |f| %>
+<%= form_with model: @donation_address, url: donations_path, local: true do |f| %>
+  <%= render 'error_messages', model: @donation_address %>
   <h1>住所</h1>
   <div class="field">
-   <%= f.label :postal_code, "郵便番号（ハイフンを含む）" %>
-   <%= f.text_field :postal_code %>
+    <%= f.label :postal_code, "郵便番号（ハイフンを含む）" %>
+    <%= f.text_field :postal_code %>
   </div>
   <div class="field">
     <%= f.label :prefecture, "都道府県" %>
